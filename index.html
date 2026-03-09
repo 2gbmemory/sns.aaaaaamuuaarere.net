@@ -2,11 +2,12 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Links</title>
+<title>リンク一覧</title>
 
 <link rel="icon" type="image/png" href="favicon.png">
 
 <style>
+
 body{
     margin:0;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
@@ -17,6 +18,8 @@ body{
     justify-content:center;
     align-items:center;
     height:100vh;
+
+    cursor:none;
 }
 
 
@@ -48,8 +51,8 @@ h1{
     text-decoration:none;
     color:#111;
 
-    background:rgba(255,255,255,0.5);
-    border:1px solid rgba(255,255,255,0.6);
+    background:rgba(255,255,255,0.6);
+    border:1px solid rgba(255,255,255,0.7);
 
     transition:0.25s;
 }
@@ -78,25 +81,49 @@ h1{
     color:white;
 }
 
+
+.gitlab:hover{
+    background:#E24329;
+    color:white;
+}
+
+
+.guns:hover{
+    background:#7B3FE4;
+    color:white;
+}
+
 .note{
     font-size:12px;
     color:#444;
 }
-</style>
 
+
+.cursor{
+    width:12px;
+    height:12px;
+    background:black;
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    transform:translate(-50%, -50%);
+    z-index:9999;
+}
+
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>リンク一覧</h1>
+<h1>Links</h1>
 
 <a class="link spotify" href="https://open.spotify.com/user/31rkde6vy3lcszyefhbi33dkgthm">
 Spotify
 </a>
 
-<a class="link twitter" href="https://x.com/aaaaaamuuaarere">
+<a class="link twitter" href="https://twitter.com/aaaaaamuuaarere">
 Twitter
 </a>
 
@@ -109,7 +136,26 @@ Reddit
 Xbox
 </a>
 
+<a class="link gitlab" href="https://gitlab.com/2bmemory">
+GitLab
+</a>
+
+<a class="link guns" href="https://guns.lol/aamre">
+guns.lol
+</a>
+
 </div>
+
+<div class="cursor"></div>
+
+<script>
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", e => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
+</script>
 
 </body>
 </html>
